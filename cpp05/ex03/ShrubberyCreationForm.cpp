@@ -6,7 +6,7 @@
 /*   By: nbled <nbled@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/17 13:25:32 by nbled             #+#    #+#             */
-/*   Updated: 2023/10/20 04:54:26 by nbled            ###   ########.fr       */
+/*   Updated: 2023/10/20 09:27:54 by nbled            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,19 +14,19 @@
 #include <fstream>
 
 ShrubberyCreationForm::ShrubberyCreationForm()
-    : AForm("President", 145, 137)
+    : AForm("ShrubberyCreationForm", 145, 137)
 {
     std::cout << "-ShrubberyCreationForm default constructor called-" << std::endl;
 }
 
 ShrubberyCreationForm::ShrubberyCreationForm(std::string target)
-    : AForm("President", 145, 137), target(target)
+    : AForm("ShrubberyCreationForm", 145, 137), target(target)
 {
     std::cout << "-ShrubberyCreationForm constructor called-" << std::endl;
 }
 
 ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm& other)
-    : AForm("President", 145, 137), target(other.target)
+    : AForm("ShrubberyCreationForm", 145, 137), target(other.target)
 {
     std::cout << "-ShrubberyCreationForm copy constructor called-" << std::endl;
 }

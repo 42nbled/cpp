@@ -6,7 +6,7 @@
 /*   By: nbled <nbled@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/04 02:19:10 by nbled             #+#    #+#             */
-/*   Updated: 2023/10/18 16:51:00 by nbled            ###   ########.fr       */
+/*   Updated: 2023/10/20 05:11:46 by nbled            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int    main()
     std::cout << std::endl;
     std::cout << "working :" << std::endl;
     std::cout << std::endl;
-    
+
     {
         Bureaucrat    bob("Bob", 1);
         ShrubberyCreationForm Shrubbery("Garden");
@@ -91,7 +91,7 @@ int    main()
     std::cout << std::endl;
     std::cout << "working :" << std::endl;
     std::cout << std::endl;
-    
+
     {
         Bureaucrat    bob("Bob", 1);
         RobotomyRequestForm Robotomy("Garage");
@@ -146,7 +146,7 @@ int    main()
     {
         std::cout << e.what() << std::endl;
     }
-    
+
     std::cout << std::endl;
     std::cout << "+------------------------------------------+" << std::endl;
     std::cout << "|                Presidential              |" << std::endl;
@@ -154,17 +154,19 @@ int    main()
     std::cout << std::endl;
     std::cout << "working :" << std::endl;
     std::cout << std::endl;
-    
+
     {
         Bureaucrat    bob("Bob", 1);
-        PresidentialPardonForm president("Tower");
-        std::cout << GRAY;
+        //PresidentialPardonForm president("Tower");
+        AForm* president = new PresidentialPardonForm("Tower");
+		std::cout << GRAY;
         std::cout << bob << std::endl;
         std::cout << president << std::endl;
         std::cout << std::endl;
-        bob.signForm(president);
-        bob.executeForm(president);
+        bob.signForm(*president);
+        bob.executeForm(*president);
         std::cout << END;
+		delete president;
     }
 
     std::cout << std::endl;
@@ -209,6 +211,6 @@ int    main()
     {
         std::cout << e.what() << std::endl;
     }
-    
+
     return 0;
 }
