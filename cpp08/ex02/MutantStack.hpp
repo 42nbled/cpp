@@ -10,35 +10,26 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef MUTANTSTACK_HPP
+# define MUTANTSTACK_HPP
+
 #include <iostream>
 #include <stack>
 #include <algorithm>
-
-#ifndef MUTANTSTACK_HPP
-# define MUTANTSTACK_HPP
 
 template <typename T>
 class MutantStack : public std::stack<T>
 {
 	public:
 
-	MutantStack()
-	{
-		std::cout << "-MutantStack default constructor called-" << std::endl;
-	};
-	MutantStack(const MutantStack &src)
-	{
-		std::cout << "-MutantStack copy constructor called-" << std::endl;
-		*this = src;
-	};
-	virtual ~MutantStack()
-	{
-		std::cout << "-MutantStack destructor called-" << std::endl;
-	};
+	MutantStack() { };
+	MutantStack(const MutantStack &src) { *this = src; };
+	~MutantStack() { };
 
 	MutantStack & operator=(const MutantStack &rhs)
 	{
-		*this = &rhs;
+		std::stack<T>::operator=(rhs);
+		return (*this);
 	};
 
 	typedef typename std::deque<T>::iterator iterator;

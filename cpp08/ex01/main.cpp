@@ -15,39 +15,64 @@
 
 int main()
 {
-    try
-	{
-        Span span(5);
-
-        span.addNumber(5);
-        span.addNumber(3);
-        span.addNumber(9);
-        span.addNumber(1);
-        span.addNumber(7);
-        std::cout << "Shortest Span: " << span.shortestSpan() << std::endl;
-        std::cout << "Longest Span: " << span.longestSpan() << std::endl;
-    }
-	catch (std::exception &e)
-	{
-        std::cerr << "Exception: " << e.what() << std::endl;
-    }
+	std::cout << std::endl << "working : " << std::endl << std::endl;
 	try
 	{
-        Span span(5);
-
-        span.addNumber(5);
-        span.addNumber(3);
-        span.addNumber(9);
-        span.addNumber(1);
-        span.addNumber(7);
-        span.addNumber(11);
-        std::cout << "Shortest Span: " << span.shortestSpan() << std::endl;
-        std::cout << "Longest Span: " << span.longestSpan() << std::endl;
-    }
+		Span sp = Span(5);
+		sp.addNumber(6);
+		sp.addNumber(3);
+		sp.addNumber(17);
+		sp.addNumber(9);
+		sp.addNumber(11);
+		sp.print_vec();
+		std::cout << "Shortest Span: " << sp.shortestSpan() << std::endl;
+		std::cout << "Longest Span: " << sp.longestSpan() << std::endl;
+	}
 	catch (std::exception &e)
 	{
-        std::cerr << "Exception: " << e.what() << std::endl;
-    }
+		std::cerr << "Exception: " << e.what() << std::endl;
+	}
+	std::cout << std::endl << "working : " << std::endl << std::endl;
+	try
+	{
+		Span sp(10000);
 
-    return 0;
+		sp.addRangeNumber(10000);
+		std::cout << "10 K number ... " << std::endl;
+		std::cout << "Shortest Span: " << sp.shortestSpan() << std::endl;
+		std::cout << "Longest Span: " << sp.longestSpan() << std::endl;
+	}
+	catch (std::exception &e)
+	{
+		std::cerr << "Exception: " << e.what() << std::endl;
+	}
+	std::cout << std::endl << "fail : " << std::endl << std::endl;
+	try
+	{
+		Span sp(10);
+
+		sp.addRangeNumber(11);
+		sp.print_vec();
+		std::cout << "Shortest Span: " << sp.shortestSpan() << std::endl;
+		std::cout << "Longest Span: " << sp.longestSpan() << std::endl;
+	}
+	catch (std::exception &e)
+	{
+		std::cerr << "Exception: " << e.what() << std::endl;
+	}
+	std::cout << "fail : " << std::endl << std::endl;
+	try
+	{
+		Span sp(1);
+
+		sp.addRangeNumber(1);
+		std::cout << "Shortest Span: " << sp.shortestSpan() << std::endl;
+		std::cout << "Longest Span: " << sp.longestSpan() << std::endl;
+	}
+	catch (std::exception &e)
+	{
+		std::cerr << "Exception: " << e.what() << std::endl;
+	}
+
+	return 0;
 }

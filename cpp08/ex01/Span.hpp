@@ -14,8 +14,9 @@
 #define SPAN_HPP
 
 #include <vector>
+#include <algorithm>
 #include <iostream>
-#include <ostream>
+#include <ctime>
 
 class Span
 {
@@ -28,6 +29,8 @@ class Span
         Span& operator=(const Span& other);
 
         void			addNumber(int i);
+		void			addRangeNumber(unsigned int n);
+		void			print_vec(void);
         unsigned int	shortestSpan(void);
         unsigned int	longestSpan(void);
 

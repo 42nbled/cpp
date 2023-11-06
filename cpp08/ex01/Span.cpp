@@ -11,35 +11,19 @@
 /* ************************************************************************** */
 
 #include "Span.hpp"
-#include <algorithm> // Include the <algorithm> header for std::sort
 
-Span::Span()
-    : _n(0)
-{
-    std::cout << "-Span default constructor called-" << std::endl;
-}
+Span::Span() : _n(0) { }
 
-Span::Span(unsigned int n)
-    : _n(n)
-{
-    std::cout << "-Span constructor called-" << std::endl;
-}
+Span::Span(unsigned int n) : _n(n) { }
 
-Span::Span(const Span& other)
-    : _vector(other._vector), _n(other._n)
-{
-    std::cout << "-Span copy constructor called-" << std::endl;
-}
+Span::Span(const Span& other) : _vector(other._vector), _n(other._n) { }
 
-Span::~Span()
-{
-    std::cout << "-Span destructor called-" << std::endl;
-}
+Span::~Span() { }
 
 Span& Span::operator=(const Span& other)
 {
-    _vector = other._vector; // Copy the vector
-    _n = other._n;         // Copy the value of _n
+    _vector = other._vector;
+    _n = other._n;
     return *this;
 }
 
@@ -51,6 +35,20 @@ void Span::addNumber(int i)
         throw (Span::class_full());
 }
 
+void	Span::addRangeNumber(unsigned int n)
+{
+	std::srand(std::time(NULL));
+	for (unsigned int i = 0; i < n; i++)
+		this->addNumber(rand() % n);
+}
+
+void	Span::print_vec()
+{
+	for (unsigned int i = 0; i < _n; i++)
+		std::cout << _vector[i] << " ";
+	 std::cout << std::endl;
+}
+
 unsigned int Span::shortestSpan()
 {
     if (this->_vector.size() > 1)
@@ -58,9 +56,9 @@ unsigned int Span::shortestSpan()
         std::vector<int> sortedVector = _vector;
         std::sort(sortedVector.begin(), sortedVector.end());
         unsigned int shortest = static_cast<unsigned int>(sortedVector[1] - sortedVector[0]);
-        for (size_t i = 2; i < sortedVector.size(); ++i)
+        for (size_t i = 1; i < sortedVector.size() - 1; ++i)
         {
-            unsigned int currentSpan = static_cast<unsigned int>(sortedVector[i] - sortedVector[i - 1]);
+            unsigned int currentSpan = static_cast<unsigned int>(sortedVector[i + 1] - sortedVector[i]);
             if (currentSpan < shortest)
             {
                 shortest = currentSpan;
