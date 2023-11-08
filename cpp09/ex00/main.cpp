@@ -15,8 +15,12 @@
 int main(int argc, char **argv)
 {
 	if (argc != 2)
+	{
+		std::cout << "Error: could not open file." << std::endl;
 		return 1;
+	}
 	BitcoinExchange bitcoin(argv[1]);
-	bitcoin.get_data();
+	if (!bitcoin.get_data() && !bitcoin.btc(argv))
+		return 1;
 	return 0;
 }

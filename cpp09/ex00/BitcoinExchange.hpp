@@ -21,14 +21,18 @@
 class BitcoinExchange
 {
     public:
-        BitcoinExchange() {};
-		BitcoinExchange(std::string input) {_input = input;};
-        BitcoinExchange(const BitcoinExchange& other) {*this = other;};
-        ~BitcoinExchange() {};
+        BitcoinExchange();
+		BitcoinExchange(std::string input);
+        BitcoinExchange(const BitcoinExchange& other);
+        ~BitcoinExchange();
 
         BitcoinExchange& operator=(const BitcoinExchange& other);
 
-		void	get_data(void);
+		int			get_data(void);
+		int			btc(char **argv);
+		int			is_valid(std::string str);
+		void		find_value(std::string date, float n);
+		std::string	date_decrease(std::string date);
 
 	private :
 		std::string						_input;
