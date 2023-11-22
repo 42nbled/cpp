@@ -6,7 +6,7 @@
 /*   By: nbled <nbled@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/07 18:12:16 by nbled             #+#    #+#             */
-/*   Updated: 2023/11/17 13:38:39 by nbled            ###   ########.fr       */
+/*   Updated: 2023/11/20 16:37:43 by nbled            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ class Cure : public AMateria
         Cure& operator=(const Cure& other);
 
         Cure* clone()const;
-        //void use(ICharacter& target);
+        void use(ICharacter& target);
 };
 
 #endif

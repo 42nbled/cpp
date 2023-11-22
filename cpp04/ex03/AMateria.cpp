@@ -6,7 +6,7 @@
 /*   By: nbled <nbled@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/07 18:12:00 by nbled             #+#    #+#             */
-/*   Updated: 2023/11/17 13:19:18 by nbled            ###   ########.fr       */
+/*   Updated: 2023/11/20 17:06:44 by nbled            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,4 +43,9 @@ AMateria& AMateria::operator=(const AMateria& other)
 std::string const & AMateria::getType() const
 {
     return(_type);
+}
+
+void AMateria::use(ICharacter& target)
+{
+    (void) target;
 }

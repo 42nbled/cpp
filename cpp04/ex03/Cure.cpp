@@ -6,11 +6,12 @@
 /*   By: nbled <nbled@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/07 18:12:19 by nbled             #+#    #+#             */
-/*   Updated: 2023/11/17 13:39:23 by nbled            ###   ########.fr       */
+/*   Updated: 2023/11/20 16:46:47 by nbled            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cure.hpp"
+#include "ICharacter.hpp"
 
 Cure::Cure()
 {
@@ -40,8 +41,7 @@ Cure* Cure::clone(void)const
     return (new Cure(*this));
 }
 
-/*
 void Cure::use(ICharacter& target)
 {
-    std::cout << "* heals " << target << ">’s wounds *" << std::endl;
-}*/
+    std::cout << "* heals " << target.getName() << "’s wounds *" << std::endl;
+}

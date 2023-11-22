@@ -6,7 +6,7 @@
 /*   By: nbled <nbled@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/07 18:12:16 by nbled             #+#    #+#             */
-/*   Updated: 2023/11/17 13:45:55 by nbled            ###   ########.fr       */
+/*   Updated: 2023/11/20 16:37:36 by nbled            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ class Ice : public AMateria
         Ice& operator=(const Ice& other);
 
         Ice* clone()const;
-        //void use(ICharacter& target);
+        void use(ICharacter& target);
 };
 
 #endif

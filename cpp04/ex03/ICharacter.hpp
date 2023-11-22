@@ -6,12 +6,12 @@
 /*   By: nbled <nbled@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/07 18:11:55 by nbled             #+#    #+#             */
-/*   Updated: 2023/11/17 15:23:55 by nbled            ###   ########.fr       */
+/*   Updated: 2023/11/20 14:52:18 by nbled            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef AMATERIA_HPP
-#define AMATERIA_HPP
+#ifndef ICHARACTER_HPP
+#define ICHARACTER_HPP
 
 #include <iostream>
 #include "AMateria.hpp"

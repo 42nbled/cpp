@@ -6,7 +6,7 @@
 #    By: nbled <nbled@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/07 18:11:23 by nbled             #+#    #+#              #
-#    Updated: 2023/11/17 13:47:56 by nbled            ###   ########.fr        #
+#    Updated: 2023/11/21 18:04:59 by nbled            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,9 @@ OBJ_DIR = objs
 SRCS = main.cpp \
 	AMateria.cpp \
 	Cure.cpp \
-	Ice.cpp
+	Ice.cpp \
+	Character.cpp \
+	MateriaSource.cpp \
 
 OBJS = $(patsubst %.cpp, $(OBJ_DIR)/%.o, $(SRCS))
 
