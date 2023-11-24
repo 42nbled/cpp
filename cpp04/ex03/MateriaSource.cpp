@@ -6,7 +6,7 @@
 /*   By: nbled <nbled@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/07 18:12:00 by nbled             #+#    #+#             */
-/*   Updated: 2023/11/21 18:07:24 by nbled            ###   ########.fr       */
+/*   Updated: 2023/11/23 14:07:39 by nbled            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,20 +14,21 @@
 
 MateriaSource::MateriaSource()
 {
-    std::cout << "-MateriaSource default constructor called-" << std::endl;
     for (int i = 0; i < 4; i++)
         this->setMateria(i, NULL);
 }
 
 MateriaSource::MateriaSource(const MateriaSource& other)
 {
-    std::cout << "-MateriaSource copy constructor called-" << std::endl;
     *this = other;
 }
 
 MateriaSource::~MateriaSource()
 {
-    std::cout << "-MateriaSource destructor called-" << std::endl;
+    for (int i = 0; i < 4; i++)
+    {
+        delete _inventory[i];
+    }
 }
 
 MateriaSource& MateriaSource::operator=(const MateriaSource& other)

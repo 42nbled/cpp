@@ -6,7 +6,7 @@
 /*   By: nbled <nbled@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/07 18:12:19 by nbled             #+#    #+#             */
-/*   Updated: 2023/11/20 16:46:47 by nbled            ###   ########.fr       */
+/*   Updated: 2023/11/23 16:30:00 by nbled            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,24 +15,21 @@
 
 Cure::Cure()
 {
-    std::cout << "-Cure constructor called-" << std::endl;
     _type = "cure";
 }
 
 Cure::Cure(const Cure& other) : AMateria(other)
 {
-    std::cout << "-Cure copy constructor called-" << std::endl;
     _type = other._type;
 }
 
 Cure::~Cure()
 {
-    std::cout << "-Cure destructor called-" << std::endl;
 }
 
 Cure& Cure::operator=(const Cure& other)
 {
-    _type = other._type;
+    (void) other;
     return *this;
 }
 

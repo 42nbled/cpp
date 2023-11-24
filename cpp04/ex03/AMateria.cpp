@@ -6,7 +6,7 @@
 /*   By: nbled <nbled@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/07 18:12:00 by nbled             #+#    #+#             */
-/*   Updated: 2023/11/20 17:06:44 by nbled            ###   ########.fr       */
+/*   Updated: 2023/11/23 14:02:43 by nbled            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,24 +14,20 @@
 
 AMateria::AMateria()
 {
-    std::cout << "-AMateria default constructor called-" << std::endl;
 }
 
 AMateria::AMateria(std::string const & type)
 {
-    std::cout << "-AMateria constructor called-" << std::endl;
     _type = type;
 }
 
 AMateria::AMateria(const AMateria& other)
 {
-    std::cout << "-AMateria copy constructor called-" << std::endl;
     _type = other._type;
 }
 
 AMateria::~AMateria()
 {
-    std::cout << "-AMateria destructor called-" << std::endl;
 }
 
 AMateria& AMateria::operator=(const AMateria& other)

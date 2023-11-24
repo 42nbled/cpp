@@ -6,7 +6,7 @@
 /*   By: nbled <nbled@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/07 18:12:00 by nbled             #+#    #+#             */
-/*   Updated: 2023/11/22 16:45:40 by nbled            ###   ########.fr       */
+/*   Updated: 2023/11/23 16:13:41 by nbled            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,12 @@
 
 Character::Character()
 {
-    std::cout << "-Character default constructor called-" << std::endl;
     for (int i = 0; i < 4; i++)
         this->setMateria(i, NULL);
 }
 
 Character::Character(std::string name)
 {
-    std::cout << "-Character constructor called-" << std::endl;
     _name = name;
     for (int i = 0; i < 4; i++)
         this->setMateria(i, NULL);
@@ -29,13 +27,11 @@ Character::Character(std::string name)
 
 Character::Character(const Character& other)
 {
-    std::cout << "-Character copy constructor called-" << std::endl;
     *this = other;
 }
 
 Character::~Character()
 {
-    std::cout << "-Character destructor called-" << std::endl;
     for (int i = 0; i < 4; i++)
     {
         delete _inventory[i];
@@ -96,7 +92,6 @@ void Character::equip(AMateria *m)
 
 void Character::unequip(int i)
 {
-    //delete _inventory[i];
     setMateria(i, NULL);
 }
 
